@@ -1,0 +1,177 @@
+# Addon Name: Mixer
+# Addon id: plugin.video.mixer
+# Addon Provider: Caliaha
+msgid ""
+msgstr ""
+"Project-Id-Version: plugin.video.mixer\n"
+"Report-Msgid-Bugs-To: https://github.com/Caliaha/plugin.video.mixer/issues\n"
+"POT-Creation-Date: 2019-11-21 13:41+0000\n"
+"PO-Revision-Date: 2019-11-21 13:43+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# folders
+
+msgctxt "#30000"
+msgid "Mixer"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Browse"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Search"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Channels"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Streams"
+msgstr ""
+
+msgctxt "#30005"
+msgid "Vods"
+msgstr ""
+
+msgctxt "#30006"
+msgid "Games"
+msgstr ""
+
+msgctxt "#30007"
+msgid "Featured"
+msgstr ""
+
+msgctxt "#30008"
+msgid "A curated selection of our favourite streams"
+msgstr ""
+
+msgctxt "#30009"
+msgid "Partner Spotlight"
+msgstr ""
+
+msgctxt "#30010"
+msgid "Our exclusive content"
+msgstr ""
+
+msgctxt "#30011"
+msgid "Top Games"
+msgstr ""
+
+msgctxt "#30012"
+msgid "Games with the most people watching now"
+msgstr ""
+
+msgctxt "#30013"
+msgid "Up and Coming"
+msgstr ""
+
+msgctxt "#30014"
+msgid "New streamers to watch now"
+msgstr ""
+
+msgctxt "#30015"
+msgid "Top Streams"
+msgstr ""
+
+msgctxt "#30016"
+msgid "Offline"
+msgstr ""
+
+# items
+
+msgctxt "#30050"
+msgid "[COLOR green]Family Friendly[/COLOR]"
+msgstr ""
+
+msgctxt "#30051"
+msgid "[COLOR orange]Teen Rated[/COLOR]"
+msgstr ""
+
+msgctxt "#30052"
+msgid "[COLOR red]18+[/COLOR]"
+msgstr ""
+
+msgctxt "#30053"
+msgid "{0.name}\nViewers: {0.viewersCurrent}\nStreams: {0.online}\n{0.description}"
+msgstr ""
+
+msgctxt "#30054"
+msgid "{0.token}"
+msgstr ""
+
+msgctxt "#30055"
+msgid "{0.token}\nPlaying: {0.type.name}\nViewers: {0.viewersCurrent}\nRating: {0.audience}\nLanguage: {0.languageId}"
+msgstr ""
+
+msgctxt "#30056"
+msgid "{0.token}\nPlaying: {0.type.name}\nViewers: {0.viewersCurrent}"
+msgstr ""
+
+msgctxt "#30057"
+msgid "{0.title}\nPlaying: {0.type.name}\nViews: {0.viewCount}\nUploaded: {0.uploadDate}"
+msgstr ""
+
+msgctxt "#30099"
+msgid "More..."
+msgstr ""
+
+# settings
+
+msgctxt "#30100"
+msgid "Settings"
+msgstr ""
+
+msgctxt "#30101"
+msgid "General"
+msgstr ""
+
+msgctxt "#30102"
+msgid "Stream Quality"
+msgstr ""
+
+msgctxt "#30103"
+msgid "Auto"
+msgstr ""
+
+msgctxt "#30104"
+msgid "1080p"
+msgstr ""
+
+msgctxt "#30105"
+msgid "720p"
+msgstr ""
+
+msgctxt "#30106"
+msgid "480p"
+msgstr ""
+
+msgctxt "#30107"
+msgid "320p"
+msgstr ""
+
+msgctxt "#30108"
+msgid "160p"
+msgstr ""
+
+msgctxt "#30109"
+msgid "Always Ask"
+msgstr ""
+
+msgctxt "#30110"
+msgid "Adaptive"
+msgstr ""
+
+msgctxt "#30111"
+msgid "Items per page"
+msgstr ""
+
+msgctxt "#30112"
+msgid "Vod Quality"
+msgstr ""
+
