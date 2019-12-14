@@ -1,6 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <settings>
-    <setting id="preferredQuality" type="select" values="1080|720|480|320|160" label="Video Quality"/>
-    <setting id="searchHistoryAmount" type="slider" default="24" range="0,1,50" option="int" label="Search History Amount"/>
-    <setting id="followingLimit" type="slider" default="16" range="1,1,50" option="int" label="Streamers Per Page (Following)"/>
+    <!-- General -->
+    <category label="30101">
+        <!-- BEGIN WARNING:
+                before modifying the following settings, please have a look
+                at the Quality class in lib/utils.py -->
+        <setting id="stream_quality" label="30102"
+                 type="enum" lvalues="30103|30104|30105|30106|30107|30108|30109|30110" default="0" />
+        <setting id="vod_quality" label="30112" visible="false"
+                 type="enum" lvalues="30103|30104|30105|30106|30107|30108|30109|30110" default="0" />
+        <!-- END WARNING -->
+        <setting id="items_per_page" label="30111"
+                 type="slider" range="16,4,100" option="int" default="32" />
+    </category>
 </settings>
