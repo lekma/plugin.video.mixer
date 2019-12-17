@@ -24,5 +24,8 @@
         <assets>
             <icon>resources/media/icon.png</icon>
         </assets>
+        <news>
+Icon designed by Freepik from Flaticon (www.flaticon.com).
+        </news>
     </extension>
 </addon>
