@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: plugin.video.mixer\n"
-"Report-Msgid-Bugs-To: https://github.com/Caliaha/plugin.video.mixer/issues\n"
+"Report-Msgid-Bugs-To: https://github.com/lekma/plugin.video.mixer/issues\n"
 "POT-Creation-Date: 2019-11-21 13:41+0000\n"
 "PO-Revision-Date: 2019-11-21 13:43+0000\n"
 "MIME-Version: 1.0\n"

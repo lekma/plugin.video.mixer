@@ -20,7 +20,7 @@
         <description lang="en_GB">Mixer Livestreaming Addon</description>
         <language>en</language>
         <platform>all</platform>
-        <source>https://github.com/Caliaha/plugin.video.mixer</source>
+        <source>https://github.com/lekma/plugin.video.mixer</source>
         <assets>
             <icon>resources/media/icon.png</icon>
         </assets>
