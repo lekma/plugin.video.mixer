@@ -1,6 +1,6 @@
 # Addon Name: Mixer
 # Addon id: plugin.video.mixer
-# Addon Provider: Caliaha
+# Addon Provider: lekma
 msgid ""
 msgstr ""
 "Project-Id-Version: plugin.video.mixer\n"
