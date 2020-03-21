@@ -64,6 +64,7 @@ class Dispatcher(object):
                           for item in items.items(self.url, *args) if item]):
             raise
         if items.more:
+            kwargs["page"] = int(kwargs.get("page", 0)) + 1
             self.addItem(more_item(self.url, action=self.action, **kwargs))
         if items.content:
             xbmcplugin.setContent(self.handle, items.content)

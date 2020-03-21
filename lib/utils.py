@@ -57,8 +57,10 @@ _get_settings_ = {
     unicode: "getSettingString"
 }
 
-def get_setting(id, type=None):
-    return getattr(addon, _get_settings_.get(type, "getSetting"))(id)
+def get_setting(id, _type=None):
+    if _type is not None:
+        return _type(getattr(addon, _get_settings_.get(_type, "getSetting"))(id))
+    return addon.getSetting(id)
 
 
 # logging ----------------------------------------------------------------------
@@ -109,7 +111,6 @@ _more_label_ = localized_string(30099)
 _more_icon_ = get_icon("more")
 
 def more_item(url, **kwargs):
-    kwargs["page"] = int(kwargs.get("page", 0)) + 1
     return ListItem(
         _more_label_,  build_url(url, **kwargs), isFolder=True,
         infos={"video": {"plot": _more_label_}}, icon=_more_icon_)
