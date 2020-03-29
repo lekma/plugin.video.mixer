@@ -158,15 +158,15 @@ class Folder(MixerObject):
             return ""
 
     def item(self, url):
-            folder = _folders_schema_[self.type][self.style]
-            label = localized_string(folder["id"])
-            action = folder.get("action", self.type)
-            plot = folder.get("plot", "")
-            if isinstance(plot, int):
-                plot = localized_string(plot)
-            return ListItem(
-                label, build_url(url, action=action), isFolder=True,
-                infos={"video": {"title": label, "plot": plot}})
+        folder = _folders_schema_[self.type][self.style]
+        label = localized_string(folder["id"])
+        action = folder.get("action", self.type)
+        plot = folder.get("plot", "")
+        if isinstance(plot, int):
+            plot = localized_string(plot)
+        return ListItem(
+            label, build_url(url, action=action), isFolder=True,
+            infos={"video": {"title": label, "plot": plot}})
 
 
 # games ------------------------------------------------------------------------
@@ -336,18 +336,18 @@ class Vod(MixerObject):
     def _item(self, path):
         locators = self.contentLocators
         if locators:
-                streamInfos = {"video": {"width": self.width,
-                                         "height": self.height,
-                                         "duration": self.durationInSeconds}}
-                thumbnail_large = getattr(locators, "thumbnail_large", "")
-                #thumbnail_small = getattr(locators, "thumbnail_small", "")
-                return ListItem(
-                    self.title, path,
-                    infos={"video": dict(self._video_infos_,
-                                         title=self.title, plot=self.plot())},
-                    streamInfos=streamInfos,
-                    fanart=thumbnail_large,
-                    thumb=thumbnail_large)
+            streamInfos = {"video": {"width": self.width,
+                                     "height": self.height,
+                                     "duration": self.durationInSeconds}}
+            thumbnail_large = getattr(locators, "thumbnail_large", "")
+            #thumbnail_small = getattr(locators, "thumbnail_small", "")
+            return ListItem(
+                self.title, path,
+                infos={"video": dict(self._video_infos_,
+                                     title=self.title, plot=self.plot())},
+                streamInfos=streamInfos,
+                fanart=thumbnail_large,
+                thumb=thumbnail_large)
 
     def item(self, url, action):
         return self._item(build_url(url, action=action, id=self.id))
