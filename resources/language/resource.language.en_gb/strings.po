@@ -132,46 +132,72 @@ msgid "General"
 msgstr ""
 
 msgctxt "#30102"
-msgid "Stream Quality"
-msgstr ""
-
-msgctxt "#30103"
-msgid "Auto"
-msgstr ""
-
-msgctxt "#30104"
-msgid "1080p"
-msgstr ""
-
-msgctxt "#30105"
-msgid "720p"
-msgstr ""
-
-msgctxt "#30106"
-msgid "480p"
-msgstr ""
-
-msgctxt "#30107"
-msgid "320p"
-msgstr ""
-
-msgctxt "#30108"
-msgid "160p"
-msgstr ""
-
-msgctxt "#30109"
-msgid "Always Ask"
-msgstr ""
-
-msgctxt "#30110"
-msgid "Adaptive"
-msgstr ""
-
-msgctxt "#30111"
 msgid "Items per page"
 msgstr ""
 
+msgctxt "#30111"
+msgid "Quality"
+msgstr ""
+
 msgctxt "#30112"
+msgid "Stream Quality"
+msgstr ""
+
+msgctxt "#30113"
 msgid "Vod Quality"
+msgstr ""
+
+# qualities
+
+msgctxt "#30901"
+msgid "Auto"
+msgstr ""
+
+msgctxt "#30902"
+msgid "Always Ask"
+msgstr ""
+
+msgctxt "#30903"
+msgid "Adaptive"
+msgstr ""
+
+msgctxt "#30910"
+msgid "144p"
+msgstr ""
+
+msgctxt "#30911"
+msgid "160p"
+msgstr ""
+
+msgctxt "#30912"
+msgid "240p"
+msgstr ""
+
+msgctxt "#30913"
+msgid "320p"
+msgstr ""
+
+msgctxt "#30914"
+msgid "360p"
+msgstr ""
+
+msgctxt "#30915"
+msgid "480p"
+msgstr ""
+
+msgctxt "#30916"
+msgid "720p"
+msgstr ""
+
+msgctxt "#30917"
+msgid "1080p"
+msgstr ""
+
+msgctxt "#30918"
+msgid "1440p"
+msgstr ""
+
+msgctxt "#30919"
+msgid "2160p"
 msgstr ""
 
