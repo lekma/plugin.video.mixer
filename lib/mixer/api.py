@@ -13,39 +13,24 @@ from . import objects
 from ..utils import StreamQuality, notify, debug
 
 
-base_url = "https://mixer.com/api/"
+class MixerSession(requests.Session):
 
-base_headers = {
-    #"Client-ID": "will need to be specified at one point"
-}
-
-
-class Session(requests.Session):
-
-    def __init__(self, url, headers=None):
-        self.url = url
-        super(Session, self).__init__()
+    def __init__(self, headers=None):
+        super(MixerSession, self).__init__()
         if headers:
             self.headers.update(headers)
 
-    def urljoin(self, url):
-        return urljoin(self.url, url)
-
-    def _request_(self, method, url, *args, **kwargs):
-        response = super(Session, self).request(method, self.urljoin(url),
-                                                *args, **kwargs)
-        debug("request: {} '{}'".format(method, response.url))
+    def request(self, *args, **kwargs):
+        response = super(MixerSession, self).request(*args, **kwargs)
         response.raise_for_status()
         return response
 
-    def request(self, *args, **kwargs):
-        return self._request_(*args, **kwargs).json()
 
-    def get_manifest(self, url):
-        return self._request_("GET", url).text
+class MixerService(object):
 
+    _headers_ = {}
 
-class Service(object):
+    _url_ = "https://mixer.com/api/"
 
     _urls_ = {
         "manifest": "v1/channels/{}/manifest.m3u8",
@@ -61,16 +46,19 @@ class Service(object):
 
     _default_order_ = "viewersCurrent:DESC"
 
-    def __init__(self, url, headers=None):
-        self.session = Session(url, headers=headers)
+    def __init__(self):
+        self.session = MixerSession(headers=self._headers_)
         self.game_cache = objects.Cache(self._games_())
+
+    def query(self, url, **kwargs):
+        return self.session.get(urljoin(self._url_, url), params=kwargs).json()
 
     # --------------------------------------------------------------------------
 
     def _stream_url_(self, id, quality=0):
-        url = self.session.urljoin(self._urls_["manifest"].format(id))
+        url = urljoin(self._url_, self._urls_["manifest"].format(id))
         if quality and quality < 7:
-            manifest = m3u8.loads(self.session.get_manifest(url), url)
+            manifest = m3u8.loads(self.session.get(url).text)
             qualities = [StreamQuality(playlist)
                          for playlist in manifest.playlists
                          if playlist.stream_info.resolution]
@@ -102,7 +90,7 @@ class Service(object):
         return ":".join(("id", "in", ";".join(map(str, ids))))
 
     def _get_home_(self, **kwargs):
-        return self.session.get(self._urls_["home"], params=kwargs)["rows"]
+        return self.query(self._urls_["home"], **kwargs)["rows"]
 
     def _delve_(self, _type, style, **kwargs):
         keys = kwargs.pop("keys", ("hydration", "results"))
@@ -115,30 +103,30 @@ class Service(object):
         return []
 
     def _top_streams_(self, **kwargs):
-        return self.session.get(self._urls_["top_streams"], params=kwargs)
+        return self.query(self._urls_["top_streams"], **kwargs)
 
     def _get_channels_(self, **kwargs):
         kwargs.setdefault("page", 0)
         kwargs.setdefault("order", self._default_order_)
-        return self.session.get(self._urls_["channels"], params=kwargs)
+        return self.query(self._urls_["channels"], **kwargs)
 
     def _get_channel_(self, id, **kwargs):
-        return self.session.get(self._urls_["channel"].format(id), params=kwargs)
+        return self.query(self._urls_["channel"].format(id), **kwargs)
 
     def _get_vods_(self, id, **kwargs):
-        return self.session.get(self._urls_["vods"].format(id), params=kwargs)
+        return self.query(self._urls_["vods"].format(id), **kwargs)
 
     def _get_vod_(self, id, **kwargs):
-        return self.session.get(self._urls_["vod"].format(id), params=kwargs)
+        return self.query(self._urls_["vod"].format(id), **kwargs)
 
     def _get_games_(self, **kwargs):
         kwargs["noCount"] = "true"
         kwargs.setdefault("page", 0)
         kwargs.setdefault("order", self._default_order_)
-        return self.session.get(self._urls_["games"], params=kwargs)
+        return self.query(self._urls_["games"], **kwargs)
 
     def _get_game_(self, id, **kwargs):
-        return self.session.get(self._urls_["game"].format(id))
+        return self.query(self._urls_["game"].format(id))
 
     # see objects.Vod ----------------------------------------------------------
 
@@ -242,5 +230,5 @@ class Service(object):
         return objects.Games(results, limit=limit)
 
 
-service = Service(base_url, base_headers)
+service = MixerService()
 
